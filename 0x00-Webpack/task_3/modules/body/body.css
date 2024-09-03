@@ -1,0 +1,10 @@
+body{
+    background-color: aliceblue;
+    padding: 20px;
+    justify-content: center;
+    text-align: center;
+}
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+}
