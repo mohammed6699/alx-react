@@ -5,9 +5,9 @@
     module.exports = {
     mode: 'development',
     entry: {
-        header: './src/header.js',
-        body: './src/body.js',
-        footer: './src/footer.js',
+        header: './modules/header/header.js',
+        body: './modules/body/body.js',
+        footer: './modules/footer/footer.js',
     },
     output: {
         filename: '[name].bundle.js',
@@ -15,7 +15,9 @@
     },
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: path.resolve(__dirname, 'public'),
+        static: {
+        directory: path.resolve(__dirname, 'public'),
+        },
         port: 8564,
         open: true,
     },

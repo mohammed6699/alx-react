@@ -2,9 +2,10 @@ import $ from "jquery";
 import _ from "lodash";
 import "./body.css";
 
+$('body').append('<button>Click me</button><p id="count">0</p>');
+
 let count = 0;
-    function updateCounter() {
+$('button').on('click',_.throttle(() => {
         count += 1;
-        $('#count').text(`${count} clicks on the button`);
-    }
-    $('button').on('click',_.debounce(updateCounter, 500));
+        $('#count').text(count);
+    }, 1000));
