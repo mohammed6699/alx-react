@@ -1,0 +1,15 @@
+.Notifications{
+    border: 3px dashed #e0344a;
+    padding: 6px 12px;
+    position: relative;
+}
+.menuItem{
+    display: flex;
+    padding-left: 1200px;
+}
+ul li[data-notification-type="default"]{
+    color: blue;
+}
+ul li[data-notification-type="urgent"]{
+    color: red;
+}
