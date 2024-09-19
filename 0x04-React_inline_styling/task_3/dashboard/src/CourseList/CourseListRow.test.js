@@ -9,8 +9,14 @@ describe ('<CourseListRow />', () => {
     });
 
     it ('renders isHeader is true', () => {
-        const wrapper = shallow(<CourseListRow isHeader={false} textFirstCell="Header 1" />);
-        const Element = wrapper.find('th');
+        const wrapper = shallow(<CourseListRow isHeader={true} textFirstCell="Header 1" />);
+        const Element = wrapper.find('tr');
+        expect(Element.prop('style')).toEqual({backgroundColor: "##deb5b545"});
+    it ('renders Header if false', () => {
+        const wrapper = shallow(<CourseListRow isHeader={false} textFirstCell="Row 1" textSecondCell="Row 2" />);
+        const Element = wrapper.find('tr');
+        expect(Element.prop('style')).toEqual({backgroundColor: "#f5f5f5ab"});
+    })
 
         expect(Element).toHaveLength(1);
         expect(Element.prop('colSpan')).toBe(2);
